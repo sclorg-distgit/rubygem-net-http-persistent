@@ -1,0 +1,25 @@
+From 327e82627da2af89fa33a765713c4ae61a851132 Mon Sep 17 00:00:00 2001
+From: Eric Hodel <drbrain@segment7.net>
+Date: Wed, 17 Oct 2012 16:29:50 -0700
+Subject: [PATCH] Updated test RSA key size to 1024 bits.  Fixes #25
+
+---
+ test/test_net_http_persistent_ssl_reuse.rb | 2 +-
+ 1 files changed, 1 insertions(+), 1 deletion(-)
+
+diff --git a/test/test_net_http_persistent_ssl_reuse.rb b/test/test_net_http_persistent_ssl_reuse.rb
+index 44e9b13..605e6a9 100644
+--- a/test/test_net_http_persistent_ssl_reuse.rb
++++ b/test/test_net_http_persistent_ssl_reuse.rb
+@@ -21,7 +21,7 @@ def printf(*args) end
+   def setup
+     @name = OpenSSL::X509::Name.parse 'CN=localhost'
+ 
+-    @key = OpenSSL::PKey::RSA.new 512
++    @key = OpenSSL::PKey::RSA.new 1024
+ 
+     @cert = OpenSSL::X509::Certificate.new
+     @cert.version = 2
+-- 
+1.8.4
+
